@@ -40,3 +40,14 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+document.body.style.backgroundColor = 'cream';
+
+const aTags = document.querySelectorAll('a');
+aTags.forEach((currentValue, index) => {
+  currentValue.textContent = siteContent.nav['nav-item-' + (index + 1)];
+  currentValue.classList.add('italic');
+});
+
+const logoImg = document.getElementById('logo-img');
+logoImg.setAttribute('src', 'http://localhost:9000/img/logo.png');
+
