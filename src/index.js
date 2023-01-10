@@ -71,24 +71,23 @@ const mainContent = document.querySelector('.main-content');
 const header4 = mainContent.querySelectorAll('h4');
 const mainp = mainContent.querySelectorAll('p');
 
-// how to parse the object?
-// turn obj into array
-// let mainContentArr = [siteContent['main-content']];
-// console.log(mainContent);
-
-// filter array
-
-console.log(header4[0])
+// go through each h4
+// for each h4 go through the keys in main content
+// if key ends in h4
+// set current h4 to the value of the h4 key who's index matches the h4; i.e. match first h4 tag to first h4 description and so on; 
 
 for (let h = 0; h < header4.length; h++){
-  console.log(header4[h])
   for(let key in siteContent['main-content']) {
-    if(key.slice(-3) === '-h4'){
-      header4[h].textContent = siteContent['main-content'][key];
+    if(key.slice(-3) === '-h4'){ 
+      header4[h].textContent = Object.values(siteContent['main-content'])[h*2];
     }
   };
 }
 
-for (let p of mainp){
-  p.textContent = siteContent['main-content']['features-content'];
+for (let p = 0; p < mainp.length; p++){
+  for(let key in siteContent['main-content']) {
+    if(key.slice(-8) === '-content'){ 
+      mainp[p].textContent = Object.values(siteContent['main-content'])[(p * 2) + 1];
+    }
+  };
 }
