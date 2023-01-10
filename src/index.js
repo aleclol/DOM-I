@@ -41,8 +41,7 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 
 // Functionality Check
 
-console.log('project wired!')
-document.body.style.backgroundColor = 'cream';
+console.log('project wired!');
 
 // Anchor Tags
 
@@ -76,10 +75,10 @@ const mainp = mainContent.querySelectorAll('p');
 // if key ends in h4
 // set current h4 to the value of the h4 key who's index matches the h4; i.e. match first h4 tag to first h4 description and so on; 
 
-for (let h = 0; h < header4.length; h++){
+for (let i = 0; i < header4.length; i++){
   for(let key in siteContent['main-content']) {
     if(key.slice(-3) === '-h4'){ 
-      header4[h].textContent = Object.values(siteContent['main-content'])[h*2];
+      header4[i].textContent = Object.values(siteContent['main-content'])[i*2];
     }
   };
 }
@@ -91,3 +90,39 @@ for (let p = 0; p < mainp.length; p++){
     }
   };
 }
+
+
+// CTA Code Snippet img
+
+const codeImg = document.getElementById('cta-img');
+codeImg.setAttribute('src', 'http://localhost:9000/img/cta.png');
+
+
+// Middle Snippet img
+
+const midImg = document.getElementById('middle-img');
+midImg.setAttribute('src', 'http://localhost:9000/img/accent.png');
+
+
+// Contact Section
+// Contact Header:
+const contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+// Contact Info:
+const contactSection = document.querySelectorAll('.contact p');
+
+for (let i = 0; i < contactSection.length; i++){
+  for(let key in siteContent['contact']) {
+    if(key.slice(-3) !== '-h4'){ 
+      contactSection[i].textContent = Object.values(siteContent['contact'])[(i + 1)];
+    }
+  };
+}
+
+// Footer
+
+const copyright = document.querySelector('footer a');
+copyright.classList.add('bold');
+copyright.classList.remove('italic');
+copyright.textContent = 'Copyright Great Idea! 2021';
