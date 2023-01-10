@@ -71,12 +71,24 @@ const mainContent = document.querySelector('.main-content');
 const header4 = mainContent.querySelectorAll('h4');
 const mainp = mainContent.querySelectorAll('p');
 
-//console.log(header4);
+// how to parse the object?
+// turn obj into array
+// let mainContentArr = [siteContent['main-content']];
+// console.log(mainContent);
 
-for (let h of header4){
-  h.textContent = "header";
+// filter array
+
+console.log(header4[0])
+
+for (let h = 0; h < header4.length; h++){
+  console.log(header4[h])
+  for(let key in siteContent['main-content']) {
+    if(key.slice(-3) === '-h4'){
+      header4[h].textContent = siteContent['main-content'][key];
+    }
+  };
 }
 
 for (let p of mainp){
-  p.textContent = "text";
+  p.textContent = siteContent['main-content']['features-content'];
 }
