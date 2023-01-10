@@ -39,8 +39,12 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
+// Functionality Check
+
 console.log('project wired!')
 document.body.style.backgroundColor = 'cream';
+
+// Anchor Tags
 
 const aTags = document.querySelectorAll('a');
 aTags.forEach((currentValue, index) => {
@@ -48,6 +52,35 @@ aTags.forEach((currentValue, index) => {
   currentValue.classList.add('italic');
 });
 
+// // Logo
+
 const logoImg = document.getElementById('logo-img');
 logoImg.setAttribute('src', 'http://localhost:9000/img/logo.png');
 
+// // Call to Action Update
+
+const heading1 = document.querySelector('.cta h1');
+heading1.textContent = siteContent.cta['h1'];
+
+const button1 = document.querySelector('.cta button');
+button1.textContent = siteContent.cta['button'];
+
+// //const mainContent = document.querySelectorAll('.main-content');
+// siteContent['main-content'].forEach((currentValue, index) => {
+//   currentValue.textContent = siteContent['main-content']['nav-item-' + (index + 1)];
+// });
+// heading1.textContent = siteContent.cta['h1'];
+
+// const heading4 = document.querySelectorAll('h4');
+// console.log(heading4);
+// heading4.forEach((currentValue, index) => {
+//   currentValue.textContent = siteContent['main-content'][index];
+// });
+
+// const mainContent = document.querySelector('main-content');
+// const header4 = mainContent.querySelectorAll('h4');
+// const mainp = mainContent.querySelectorAll('p');
+
+// for (let h in header4){
+//   h.textContent = "hi!";
+// }
